@@ -25,6 +25,10 @@ public class EventController {
 	@Autowired
 	private HttpSession session;
 
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
 
     @RequestMapping(value = "/event", method = RequestMethod.GET)
     public String addEvent(Model model, @RequestParam(value = "add", required = false) Boolean addNew) {

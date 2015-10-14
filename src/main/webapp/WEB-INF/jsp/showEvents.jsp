@@ -27,7 +27,6 @@
                             <input type="hidden" name="eventId" value="{{event.id}}">
                             <button class="btn btn-primary btn-sm">Set as current</button>
                         </form>
-
                     </td>
                 </tr>
                 </tbody>
