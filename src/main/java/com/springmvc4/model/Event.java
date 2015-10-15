@@ -72,6 +72,9 @@ public class Event {
         return attendees;
     }
 
+    public int getAttendeessize() {
+    	return attendees!=null?attendees.size():0;
+    }
     public void setAttendees(List<Attendee> attendees) {
         this.attendees = attendees;
     }

@@ -43,8 +43,6 @@ public class EventController {
 
     @RequestMapping(value = "/event", method = RequestMethod.POST)
     public String addEvent(@Valid @ModelAttribute("event") Event event, BindingResult bindingResult, Model model) {
-    	System.out.println("In event.POST");
-
     	if (bindingResult.hasErrors()) {
             return "event";
         }
@@ -60,11 +58,11 @@ public class EventController {
         return "showEvents";
     }
 
-    @RequestMapping(value = "eventDetails", method = RequestMethod.GET)
-    public String eventDetails(@RequestParam("id")long id, Model model){
-        Event event = eventDAO.getOne(id);
+    @RequestMapping(value = "showEvents", method = RequestMethod.POST)
+    public String eventDetails(Model model, @RequestParam(value="eventId", required=false)long id){
+    	Event event = eventDAO.getOne(id);
         model.addAttribute("event", event);
-        return "eventDetails";
+        return "redirect:index.html";
     }
 
 }

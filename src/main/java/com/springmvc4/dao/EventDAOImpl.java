@@ -144,7 +144,7 @@ public class EventDAOImpl implements EventDAO {
 	@Transactional
 	@Override
 	public List<Attendee> getAttendees(long eventId) {
-		String sql = "SELECT * FROM attendee WHERE event_id=" + eventId;
+		String sql = "SELECT * FROM attendee WHERE fk_event_id=" + eventId;
 		List<Attendee> attendees = jdbcTemplate.query(sql,
 				new RowMapper<Attendee>() {
 					@Override

@@ -34,6 +34,7 @@ public class AttendeeController {
 
 	@RequestMapping(value = "/attendee", method = RequestMethod.POST)
 	public String attendee(@Valid @ModelAttribute Attendee attendee) {
+		System.out.println("EventID>>"+attendee.getEventId());
 		Event event = eventDAO.findOne(attendee.getEventId());
 		if (event == null) {
 			return "redirect:index.html";
