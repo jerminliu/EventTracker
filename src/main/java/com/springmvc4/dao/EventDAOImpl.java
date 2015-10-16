@@ -133,8 +133,8 @@ public class EventDAOImpl implements EventDAO {
 				anEvent.setLocation(rs.getString("location"));
 				anEvent.setDuration(rs.getInt("duration"));
 				anEvent.setUrl(rs.getString("url"));
-				//List<Attendee> attendees = getAttendees(anEvent.getId());
-				//anEvent.setAttendees(attendees);
+				List<Attendee> attendees = getAttendees(anEvent.getId());
+				anEvent.setAttendees(attendees);
 				return anEvent;
 			}
 		});
