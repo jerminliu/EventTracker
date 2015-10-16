@@ -10,9 +10,13 @@ REST controller : http://url:port/EventTracker/events.json
 Reset MYSQL root password :
 
 $ mysqld —skip-grant-tables &
+
 $ mysql -u root
+
   mysql> UPDATE mysql.user SET Password=PASSWORD('password') WHERE User='root';
+  
   mysql> FLUSH PRIVILEGES;
+  
   mysql> quit
  
 Export MYSQL schema without data :
