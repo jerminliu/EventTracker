@@ -9,6 +9,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+//This class (ServletInitializer) replaces web.xml 
 public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
@@ -24,7 +25,5 @@ public class ServletInitializer extends SpringBootServletInitializer {
         dispatcher.addMapping("/pdf/*" ,"/css/*", "*.html", "*.json", "*.xml"); //send everything from here(html, json etc.)  to servlet
         dispatcher.setLoadOnStartup(0);
     }
-
-
 
 }

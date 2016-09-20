@@ -48,7 +48,9 @@ public class EventController {
         }
         event.setId(eventDAO.createEvent(event));
         model.addAttribute("event", event);
-        return "redirect:index.html";
+        return "redirect:index.html";    
+        //"redirect" erases all request attributes and sends user out of application to desired location in this case index.html
+        //"forward" keeps the request attributes to continue the request forward
     }
   
     @RequestMapping(value = "showEvents", method = RequestMethod.GET)

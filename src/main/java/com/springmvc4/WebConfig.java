@@ -32,8 +32,10 @@ import com.springmvc4.dao.*;
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = {WebConfig.class})}
 )
 
+//This class (WebConfig) replaces web.xml
 public class WebConfig extends WebMvcConfigurerAdapter{
 
+	//InternalResourceViewResolver forces user to go thru controller; direct jsp access will give 404
     @Bean
     public ViewResolver getViewResolver(){
         InternalResourceViewResolver viewResolver =   new InternalResourceViewResolver();
